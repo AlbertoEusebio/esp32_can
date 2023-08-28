@@ -111,6 +111,7 @@ void task_LowLevelRX(void *pvParameters)
     ESP32CAN* espCan = (ESP32CAN*)pvParameters;
     while (1)
     {
+        vTaskDelay(1);
         twai_message_t message;
         if (twai_receive(&message, pdMS_TO_TICKS(100)) == ESP_OK)
         {
